@@ -164,13 +164,11 @@ export function AppProvider({ children }) {
   const login = useCallback((selectedRole) => {
     setRole(selectedRole);
     setIsAuthenticated(true);
-    addToast(`Logged in as ${selectedRole}`, 'success');
-  }, [setRole, setIsAuthenticated, addToast]);
+  }, [setRole, setIsAuthenticated]);
 
   const logout = useCallback(() => {
     setIsAuthenticated(false);
-    addToast('Logged out successfully', 'info');
-  }, [setIsAuthenticated, addToast]);
+  }, [setIsAuthenticated]);
 
   const value = {
     // State

@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Global Styles ===== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply font-sans text-on-surface bg-surface;
+  overscroll-behavior: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-bold tracking-tight;
+}
+
+/* ===== Staggered Animation Delays ===== */
+.stagger-1 { animation-delay: 0.05s; opacity: 0; }
+.stagger-2 { animation-delay: 0.1s; opacity: 0; }
+.stagger-3 { animation-delay: 0.15s; opacity: 0; }
+.stagger-4 { animation-delay: 0.2s; opacity: 0; }
+.stagger-5 { animation-delay: 0.25s; opacity: 0; }
+.stagger-6 { animation-delay: 0.3s; opacity: 0; }
+
+/* ===== Glass Morphism ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ===== Card Hover ===== */
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.08), 0 4px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== Progress Bar Fill Animation ===== */
+.progress-fill {
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== No Scrollbar Utility ===== */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Responsive sidebar ===== */
+@media (max-width: 1023px) {
+  .sidebar-desktop {
+    display: none;
+  }
+}

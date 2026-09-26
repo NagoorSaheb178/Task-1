@@ -1,0 +1,216 @@
+// ===== Mock Data for Assignment Dashboard =====
+// Simulates backend data using JSON objects + localStorage persistence
+
+export const COURSES = [
+  {
+    id: 'cs342',
+    code: 'CS 342',
+    name: 'Distributed Systems',
+    term: 'Spring 2025',
+    professor: 'Prof. Priya Sharma',
+    totalStudents: 34,
+    sections: ['Lab Section A', 'Lab Section B'],
+  },
+];
+
+export const STUDENTS = [
+  {
+    id: 'STU-88291',
+    name: 'Ananya Reddy',
+    email: 'ananya.reddy@iitb.ac.in',
+    section: 'Lab Section A',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ananya',
+    progress: 88,
+  },
+  {
+    id: 'STU-91044',
+    name: 'Dev Patel',
+    email: 'dev.patel@iitb.ac.in',
+    section: 'Lab Section A',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Dev',
+    progress: 100,
+  },
+  {
+    id: 'STU-74301',
+    name: 'Rahul Desai',
+    email: 'rahul.desai@iitb.ac.in',
+    section: 'Lab Section B',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul',
+    progress: 62,
+  },
+  {
+    id: 'STU-82190',
+    name: 'Sneha Iyer',
+    email: 'sneha.iyer@iitb.ac.in',
+    section: 'Lab Section A',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sneha',
+    progress: 75,
+  },
+  {
+    id: 'STU-65219',
+    name: 'Karthik Nair',
+    email: 'karthik.nair@iitb.ac.in',
+    section: 'Lab Section B',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Karthik',
+    progress: 45,
+  },
+  {
+    id: 'STU-99432',
+    name: 'Vikram Singh',
+    email: 'vikram.singh@iitb.ac.in',
+    section: 'Lab Section B',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Vikram',
+    progress: 92,
+  },
+];
+
+export const INITIAL_ASSIGNMENTS = [
+  {
+    id: 'a01',
+    moduleNumber: '01',
+    title: 'Socket-based Multi-client Message Queue',
+    description: 'Fundamental socket programming with concurrent thread pools, non-blocking I/O multiplexing, and FIFO persistence.',
+    dueDate: '2025-04-10T23:59:00',
+    totalPoints: 100,
+    weight: '10%',
+    courseId: 'cs342',
+    driveLink: 'https://drive.google.com/drive/folders/cs342-a1-submissions',
+    status: 'archived',
+    requireDoubleVerification: true,
+    createdBy: 'admin',
+    rubric: [
+      { category: 'Architecture', score: 25, total: 25 },
+      { category: 'Implementation', score: 25, total: 25 },
+      { category: 'Testing', score: 24, total: 25 },
+      { category: 'Documentation', score: 24, total: 25 },
+    ],
+  },
+  {
+    id: 'a02',
+    moduleNumber: '02',
+    title: 'RPC Framework Benchmark & Serialization',
+    description: 'Benchmarking gRPC vs custom binary socket serializers under packet loss conditions. Includes throughput analysis across gigabit latency variations.',
+    dueDate: '2025-04-24T23:59:00',
+    totalPoints: 100,
+    weight: '12%',
+    courseId: 'cs342',
+    driveLink: 'https://drive.google.com/drive/folders/cs342-a2-submissions',
+    status: 'graded',
+    requireDoubleVerification: true,
+    createdBy: 'admin',
+    grade: { score: 96, total: 100, letter: 'A' },
+    feedback: {
+      professor: 'Prof. Ramesh Gupta',
+      text: 'Outstanding protocol buffer serialization microbenchmarks. The throughput analysis across gigabit latency variations was published-grade. Minor point deduction on edge-case socket timeouts in stress scenario 4.',
+      date: '2025-05-04',
+    },
+    rubric: [
+      { category: 'Architecture', score: 25, total: 25 },
+      { category: 'Benchmarking', score: 25, total: 25 },
+      { category: 'Fault Resilience', score: 22, total: 25 },
+      { category: 'Report & Proof', score: 24, total: 25 },
+    ],
+  },
+  {
+    id: 'a03',
+    moduleNumber: '03',
+    title: 'Vector Clock & State Synchronization',
+    description: 'Implementation of causality tracking algorithms using Lamport logical clocks and Matrix Vector clocks over an asynchronous simulated network mesh.',
+    dueDate: '2025-05-08T23:59:00',
+    totalPoints: 100,
+    weight: '15%',
+    courseId: 'cs342',
+    driveLink: 'https://drive.google.com/drive/folders/cs342-a3-submissions',
+    status: 'submitted',
+    requireDoubleVerification: true,
+    createdBy: 'admin',
+    submittedAt: '2025-05-12T23:42:00',
+    receiptId: 'BC-99214',
+    fileName: 'cs342-a3-final.zip',
+  },
+  {
+    id: 'a04',
+    moduleNumber: '04',
+    title: 'Raft Consensus Protocol Implementation',
+    description: 'Build a distributed state machine using the Raft consensus algorithm. Your cluster must handle leader elections, heartbeats, log replication, and recover reliably from dynamic network partitions.',
+    dueDate: '2025-05-16T18:00:00',
+    totalPoints: 100,
+    weight: '15%',
+    courseId: 'cs342',
+    driveLink: 'https://drive.google.com/drive/folders/cs342-a4-submissions',
+    status: 'pending',
+    requireDoubleVerification: true,
+    createdBy: 'admin',
+    staffLead: 'Prof. Ramesh Gupta',
+    deliverables: 'PDF Report + Source (.zip)',
+    peerReview: '2 Peer Reviews Assigned Post-Cutoff',
+  },
+  {
+    id: 'a05',
+    moduleNumber: '05',
+    title: 'Paxos Quorum & Byzantine Tolerance',
+    description: 'Implement a multi-Paxos consensus system with quorum-based commit protocol, designed to tolerate Byzantine faults in a simulated adversarial network.',
+    dueDate: '2025-05-28T23:59:00',
+    totalPoints: 100,
+    weight: '15%',
+    courseId: 'cs342',
+    driveLink: 'https://drive.google.com/drive/folders/cs342-a5-submissions',
+    status: 'pending',
+    requireDoubleVerification: true,
+    createdBy: 'admin',
+    staffLead: 'Prof. Ramesh Gupta',
+    deliverables: 'Source Code (.zip)'
+  },
+  {
+    id: 'a06',
+    moduleNumber: '06',
+    title: 'Advanced Distributed Caching',
+    description: 'Design and implement a distributed in-memory cache with consistent hashing and automatic rebalancing during node failures.',
+    dueDate: '2025-06-10T23:59:00',
+    totalPoints: 100,
+    weight: '10%',
+    courseId: 'cs342',
+    driveLink: 'https://drive.google.com/drive/folders/cs342-a6-submissions',
+    status: 'upcoming',
+    requireDoubleVerification: false,
+    createdBy: 'admin',
+  },
+];
+
+// Admin view: Student submission status for each assignment
+export const INITIAL_SUBMISSIONS = [
+  // Assignment 04 submissions
+  { studentId: 'STU-88291', assignmentId: 'a04', status: 'submitted', submittedAt: '2025-05-14T14:15:00', fileName: 'raft_reddy_a_final.tar.gz', fileSize: '14.2 MB' },
+  { studentId: 'STU-91044', assignmentId: 'a04', status: 'submitted', submittedAt: '2025-05-13T21:40:00', fileName: 'raft_cluster_impl.go', fileSize: '28.4 MB', grade: 98 },
+  { studentId: 'STU-74301', assignmentId: 'a04', status: 'in-progress', submittedAt: null, fileName: null },
+  { studentId: 'STU-82190', assignmentId: 'a04', status: 'submitted', submittedAt: '2025-05-14T11:02:00', fileName: 'iyer_raft_repo.zip', fileSize: '9.1 MB' },
+  { studentId: 'STU-65219', assignmentId: 'a04', status: 'missing', submittedAt: null, fileName: null },
+  { studentId: 'STU-99432', assignmentId: 'a04', status: 'submitted', submittedAt: '2025-05-14T08:01:00', fileName: 'singh_raft_rpc.bundle', fileSize: '31.7 MB' },
+
+  // Assignment 03 submissions
+  { studentId: 'STU-88291', assignmentId: 'a03', status: 'submitted', submittedAt: '2025-05-06T10:00:00', fileName: 'vclock_reddy.zip', fileSize: '8.3 MB', grade: 94 },
+  { studentId: 'STU-91044', assignmentId: 'a03', status: 'submitted', submittedAt: '2025-05-05T22:15:00', fileName: 'vclock_patel.zip', fileSize: '12.1 MB', grade: 97 },
+  { studentId: 'STU-74301', assignmentId: 'a03', status: 'submitted', submittedAt: '2025-05-07T09:30:00', fileName: 'vclock_desai.zip', fileSize: '7.9 MB', grade: 85 },
+  { studentId: 'STU-82190', assignmentId: 'a03', status: 'submitted', submittedAt: '2025-05-06T15:45:00', fileName: 'vclock_iyer.zip', fileSize: '10.4 MB', grade: 91 },
+  { studentId: 'STU-65219', assignmentId: 'a03', status: 'submitted', submittedAt: '2025-05-08T23:50:00', fileName: 'vclock_nair.zip', fileSize: '6.2 MB', grade: 72 },
+  { studentId: 'STU-99432', assignmentId: 'a03', status: 'submitted', submittedAt: '2025-05-04T18:20:00', fileName: 'vclock_singh.zip', fileSize: '15.8 MB', grade: 96 },
+
+  // Assignment 02 submissions
+  { studentId: 'STU-88291', assignmentId: 'a02', status: 'submitted', submittedAt: '2025-04-22T08:00:00', fileName: 'rpc_reddy.zip', fileSize: '5.1 MB', grade: 96 },
+  { studentId: 'STU-91044', assignmentId: 'a02', status: 'submitted', submittedAt: '2025-04-21T19:30:00', fileName: 'rpc_patel.zip', fileSize: '7.2 MB', grade: 99 },
+  { studentId: 'STU-74301', assignmentId: 'a02', status: 'submitted', submittedAt: '2025-04-23T14:00:00', fileName: 'rpc_desai.zip', fileSize: '4.8 MB', grade: 78 },
+  { studentId: 'STU-82190', assignmentId: 'a02', status: 'submitted', submittedAt: '2025-04-22T11:20:00', fileName: 'rpc_iyer.zip', fileSize: '6.3 MB', grade: 88 },
+  { studentId: 'STU-65219', assignmentId: 'a02', status: 'submitted', submittedAt: '2025-04-24T22:55:00', fileName: 'rpc_nair.zip', fileSize: '3.9 MB', grade: 65 },
+  { studentId: 'STU-99432', assignmentId: 'a02', status: 'submitted', submittedAt: '2025-04-20T16:40:00', fileName: 'rpc_singh.zip', fileSize: '9.7 MB', grade: 95 },
+
+  // Assignment 01 submissions
+  { studentId: 'STU-88291', assignmentId: 'a01', status: 'submitted', submittedAt: '2025-04-08T12:00:00', fileName: 'socket_reddy.zip', fileSize: '3.2 MB', grade: 98 },
+  { studentId: 'STU-91044', assignmentId: 'a01', status: 'submitted', submittedAt: '2025-04-07T20:15:00', fileName: 'socket_patel.zip', fileSize: '4.5 MB', grade: 100 },
+  { studentId: 'STU-74301', assignmentId: 'a01', status: 'submitted', submittedAt: '2025-04-09T16:30:00', fileName: 'socket_desai.zip', fileSize: '2.8 MB', grade: 82 },
+  { studentId: 'STU-82190', assignmentId: 'a01', status: 'submitted', submittedAt: '2025-04-08T14:45:00', fileName: 'socket_iyer.zip', fileSize: '3.6 MB', grade: 90 },
+  { studentId: 'STU-65219', assignmentId: 'a01', status: 'submitted', submittedAt: '2025-04-10T23:50:00', fileName: 'socket_nair.zip', fileSize: '2.1 MB', grade: 58 },
+  { studentId: 'STU-99432', assignmentId: 'a01', status: 'submitted', submittedAt: '2025-04-06T09:10:00', fileName: 'socket_singh.zip', fileSize: '5.4 MB', grade: 97 },
+];
+
+// Current logged-in student (for student view)
+export const CURRENT_STUDENT = STUDENTS[0]; // Ananya Reddy
